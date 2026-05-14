@@ -15,9 +15,15 @@ body {
 }
 .navbar {
     width: 100%;
-    background-color: #FDF6EC;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    color: #fdf6ec;
+    backdrop-filter: blur(2px) brightness(0.7);
+    background: rgba(15, 76, 92, 0.25);
+    border-bottom: 1px solid #0f4c5c;
 }
-
 .navbar .container {
     display: flex;
     justify-content: space-between;
@@ -31,7 +37,7 @@ body {
     font-size: 30px;
     letter-spacing: 2px;
     text-decoration: none;
-    color: #002626;
+    color: #fdf6ec;
 }
 
 .navigacija {
@@ -42,32 +48,38 @@ body {
 }
 
 .navigacija a {
-    color: black;
+    color: #fdf6ec;
     text-decoration: none;
     font-size: 18px;
     transition: 0.4s;
-    border-bottom: 2px solid #FDF6EC;
+    border-bottom: 2px solid transparent;
     padding: 20px 0;
 }
 
 .navigacija a:hover {
-    color: #c7925d;
-    border-bottom: 2px solid #002626;
+    color: #e9c46a;
+    border-bottom: 2px solid #e9c46a;
 }
 
 .hamburger {
     display: none;
     font-size: 32px;
-    color: white;
+    color: #fdf6ec;
     cursor: pointer;
 }
 
 footer {
-    background: #002626;
-    color: #FDF6EC;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    backdrop-filter: blur(2px) brightness(0.1);
+    background: rgba(15, 76, 92, 0.25);
+    border-top: 1px solid #0f4c5c;
+    color: #fdf6ec;
     text-align: center;
-    padding: 25px 20px;
-    margin-top: 50px;
+    padding: 25px 0px;
     font-family: "Cinzel", serif;
     font-weight: 600;
     letter-spacing: 2px;
@@ -101,27 +113,30 @@ footer p {
     top: 0;
     left: 0;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(48, 48, 28, 0.315);
 }
 .odjeljak{
     position: relative;
     z-index: 3;
     color: #FDF6EC;
+    
     max-width: 1050px;
     text-align: center;
 }
 .odjeljak h1{
     font-size: 60px;
     margin-bottom: 25px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 .odjeljak p{
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     text-align: center;
 }
-.odjeljak button{
+.odjeljakgumb{
+    display: inline-block;
     padding: 12px 24px;
-    border: none;
     background-color: #FDF6EC;
     color: black;
     font-size: 15px;
@@ -130,16 +145,16 @@ footer p {
     backdrop-filter: blur(22px) brightness(0.7);
     background: rgba(255, 255, 255, 0.4);
     border: 1px solid #f3f3f3;
-
+    text-decoration: none;
 }
-.odjeljak button:hover{
-    background-color: #002626;
-    color: #FDF6EC;
+.odjeljakgumb:hover{
+    background-color: #e9c46a;
+    color: black;
     transition: 0.5s;
-    backdrop-filter: blur(22px) brightness(0.7);
-    background: rgba(0, 38, 38, 0.4);
-    border: 1px solid #002626;
-
+    backdrop-filter: blur(2px) brightness(1);
+    background: rgba(92, 87, 15, 0.25);
+    border: 1px solid #e9c46a;
+    text-decoration: none;
 }
 
 .destinacije{
@@ -151,7 +166,7 @@ footer p {
 
 .destinacije h2{
     font-size: 32px;
-    color: #002626;
+    color: #0f4c5c;
     margin-bottom: 45px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -166,7 +181,7 @@ footer p {
 .kartica{
     width: 260px;
     height: 300px;
-    border: 1px solid #002626;
+    border: 1px solid #0f4c5c;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -248,7 +263,7 @@ footer p {
     background-image: url(slike/zastobasmi.jpg);
     position: relative;
     padding: 80px 0;
-    color: white;
+    color: #FDF6EC;
     text-align: center;
     background-size: cover;
     background-position: center 50%;
@@ -261,16 +276,18 @@ footer p {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(17, 17, 11, 0.493);
 }
 .naslovzastobasmi h2{
     font-size: 34px;
     margin-bottom: 15px;
     letter-spacing: 1px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 .naslovzastobasmi p{
     font-size: 17px;
-    color: white;
+    color: #FDF6EC;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 .zastobasmi .container{
     position: relative;
@@ -288,15 +305,15 @@ footer p {
     padding: 35px 25px;
     transition: 0.5s ease;
     color: black;
-    backdrop-filter: blur(5px) brightness(0.7);
+    backdrop-filter: blur(2px) brightness(0.9);
     background: rgba(255, 255, 255, 0.4);
-    border: 1px solid white;
+    border: 1px solid #FDF6EC;
 }
 .karticazasto:hover{
-    color: white;
-    backdrop-filter: blur(5px) brightness(0.7);
-    background: rgba(0, 38, 38, 0.4);
-    border: 1px solid #002626;
+    color: #FDF6EC;
+    backdrop-filter: blur(2px) brightness(1);
+    background: rgba(15, 76, 92, 0.25);
+    border: 1px solid #0f4c5c;
     transition: 0.5s ease;
 }
 .karticazasto p{
@@ -357,7 +374,8 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; 
+    color: #FDF6EC; 
+    padding-bottom: 30px;
 }
 
 .skriveno{
@@ -374,37 +392,177 @@ footer p {
     opacity: 1;
     transform: translateY(0);
 }
+.opcenito{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 0px;
+}
+.opcenitotekst{
+    width: 50%;
+}
+.opcenito h2{
+    font-size: 36px;
+    margin-bottom: 22px;
+}
+.opcenito p{
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+.opcenitoslika {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+.opcenitoslika img{
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid black;
+    object-fit: contain;
+}
+.gumbklasa{
+        margin-top: 40px;
+}
 
+.opcenito .gumb{
+    padding: 12px 24px;
+    border: none;
+    color: #FDF6EC;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    backdrop-filter: blur(2px) brightness(0.2);
+    background: rgba(15, 76, 92, 0.25);
+    border: 1px solid #0f4c5c;
 
+    
+    
+
+}
+.opcenito .gumb:hover{
+    background-color: #e9c46a;
+    color: black;
+    transition: 0.5s;
+    
+    text-decoration: none;
+    backdrop-filter: blur(2px) brightness(0.7);
+    background: rgba(122, 116, 23, 0.5);
+    border: 1px solid #e9c46a;
+
+}
+img, video{
+    max-width: 100%;
+    height: auto;
+}
+*{
+    box-sizing: border-box;
+}
+
+@media (max-width: 1270px) {
+    .container{
+        padding: 0 20px;
+    }
+    .karticepolozaj{
+        justify-content: center;
+    }
+    .kartica{
+        width: calc(50% - 20px);
+    }
+    
+    
+
+}
 
 @media (max-width: 768px) {
-
+    .navbar .container{
+        padding: 10px 50px;
+    }
     .hamburger {
         display: block;
-        color: #002626;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 5;
     }
-
     .navigacija {
         position: absolute;
-        top: 80px;
         left: 0;
+        top: 100%;
         right: 0;
-        background: #0f172a;
         flex-direction: column;
-        align-items: center;
+        background: rgba(15, 76, 92, 0.95);
+        backdrop-filter: blur(10px);
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.4s ease-in-out;
-    }
-
-    .navigacija.active {
-        max-height: 300px;
+        transition: max-height 0.4s ease;
+        
     }
 
     .navigacija a {
-        padding: 15px 0;
-        width: 100%;
+        padding: 15px;
         text-align: center;
-        color: #002626;
+        width: 100%;
+        
     }
+
+    .navigacija.active {
+        max-height: 500px;
+        position: fixed;
+        gap: 20px;
+        background: rgb(62, 87, 98);
+    }
+    .pocetna{
+        height: 450px;
+    }
+    .slajdshow{
+        height: 350px;
+    }
+    .slajd{
+        height: 350px;
+    }
+    .odjeljak{
+        margin-top: 60px;
+    }
+    .odjeljak h1{
+        font-size: 38px;
+    }
+    .odjeljak p{
+        font-size: 16px;
+    }
+    .kartica{
+        width: 90%;
+    }
+    .karticazasto{
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+    .opcenito{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .opcenitoslika{
+        display: none;
+    }
+    .opcenitotekst{
+        text-align: left;
+        width: 90%;
+    }
+    .naslovzastobasmi{
+        margin-bottom: 15px;
+    }
+    .karticezasto{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        
+    }
+    .karticazasto{
+        width: 90%;
+
+    }
+
+    
 }

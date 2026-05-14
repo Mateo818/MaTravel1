@@ -1,3 +1,32 @@
+const hamburger = document.getElementById("hamburger");
+const navigacija = document.getElementById("navigacija");
+function meni(){
+    navigacija.classList.toggle("active");
+    if(navigacija.classList.contains("active")){
+        hamburger.innerHTML= "✕";
+    }
+    else{
+        hamburger.innerHTML = "☰";
+    }
+}
+hamburger.addEventListener("click", (g)=>{
+    g.stopPropagation();
+    meni();
+});
+document.querySelectorAll(".navigacija a").forEach(link =>{
+    link.addEventListener("click", ()=>{
+        navigacija.classList.remove("active");
+        hamburger.innerHTML = "☰";
+    });
+});
+document.addEventListener("click", (o)=>{
+    if(!navigacija.contains(o.target) && !hamburger.contains(o.target)){
+        navigacija.classList.remove("active");
+        hamburger.innerHTML = "☰";
+    }
+});
+
+
 let slajdovi = document.querySelectorAll(".slajd");
 let i = 0;
 
@@ -13,51 +42,27 @@ function showSlide(){
 }
 setInterval(showSlide, 4000);
 
-let elements = document.querySelectorAll(".skriveno");
 
-function checkElements(){
+const a = document.querySelectorAll(".skriveno, .skriveno2");
+
+function prikazi() {
+
     let windowHeight = window.innerHeight;
 
-    elements.forEach(e => {
+    a.forEach(el => {
 
-        let elementTop = e.getBoundingClientRect().top;
+        let top = el.getBoundingClientRect().top;
 
-        if(elementTop < windowHeight - 100){
-            e.classList.add("pokazi");
-        }
-
-        else{
-            e.classList.remove("pokazi");
-        }
-
-    });
-}
-window.addEventListener("scroll", checkElements);
-window.addEventListener("load", checkElements);
-
-
-
-
-
-
-let e = document.querySelectorAll(".skriveno2");
-
-function provjeri(){
-    let w = window.innerHeight;
-
-    e.forEach(e => {
-
-        let et = e.getBoundingClientRect().top;
-
-        if(et < w - 100){
-            e.classList.add("pokazi");
-        }
-
-        else{
-            e.classList.remove("pokazi");
+        if (top < windowHeight - 150) {
+            el.classList.add("pokazi");
+        } else {
+            el.classList.remove("pokazi");
         }
 
     });
+
 }
-window.addEventListener("scroll", provjeri);
-window.addEventListener("load", provjeri);
+
+window.addEventListener("scroll", prikazi);
+window.addEventListener("load", prikazi);
+window.addEventListener("resize", prikazi);
