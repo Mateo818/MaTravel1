@@ -60,6 +60,9 @@ body {
     color: #e9c46a;
     border-bottom: 2px solid #e9c46a;
 }
+.navigacija a.active{
+    border-bottom: 2px solid #e9c46a;
+}
 
 .hamburger {
     display: none;
@@ -320,7 +323,7 @@ footer p {
     padding-top: 10px;
 }
 .prazno{
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 .slajdshow{
@@ -460,6 +463,129 @@ img, video{
     box-sizing: border-box;
 }
 
+.tamnija{
+    backdrop-filter: blur(2px) brightness(0.32);
+    background-color: rgb(62, 87, 98);
+    border-bottom: 1px solid #0f4c5c;
+}
+.destinacijeskrol{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44vh;
+    gap: 1px;
+}
+.destinacijaslika{
+    flex: 1;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+.destinacijaslika::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+.destinacijaslika:hover::before{
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.1));
+}
+
+.destinacijatekst{
+    flex: 1;
+    
+}
+.okvir{
+    height: 350px;
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.gumbdestinacije{
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #FDF6EC;
+    color: #FDF6EC;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    backdrop-filter: blur(22px) brightness(0.7);
+    background: #0f4c5c;
+    border: 1px solid black;
+    text-decoration: none;
+}
+.gumbdestinacije:hover{
+    background-color: #e9c46a;
+    color: black;
+    transition: 0.5s;
+    backdrop-filter: blur(2px) brightness(1);
+    background: rgba(92, 87, 15, 0.25);
+    border: 1px solid #e9c46a;
+    text-decoration: none;
+}
+.destinacijatekst h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.destinacijatekst h4{
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color:#0f4c5c;
+}
+.destinacijatekst h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+.destinacijatekst p{
+    padding-bottom: 20px;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.reverse{
+    flex-direction: row-reverse;
+}
+.lanzarote{
+    background-image: url("slike/lanzarote/lanzarote.jpg");
+}
+.lanzarote:hover{
+    background-image: url("slike/lanzarote/lanzarote2.jpg");
+    transition: 0.5s ease-in-out;
+}
+.budimpesta{
+    background-image: url("slike/budimpesta/budimpesta.jpg");
+}
+.budimpesta:hover{
+    background-image: url("slike/budimpesta/budimpesta2.jpg");
+    transition: 0.5s ease-in-out;
+}
+.casablanca{
+    background-image: url("slike/casablanca/casablanca.jpg");
+}
+.venecija{
+    background-image: url("slike/venecija/venecija.jpg");
+}
+.venecija:hover{
+    background-image: url("slike/venecija/IMG_3850.jpg");
+    transition: 0.5s ease-in-out;
+}
+h1{
+    padding-top: 35px;
+    letter-spacing: 1px;
+    font-size: 36px;
+    font-weight: 500;
+}
+
 @media (max-width: 1270px) {
     .container{
         padding: 0 20px;
@@ -470,9 +596,6 @@ img, video{
     .kartica{
         width: calc(50% - 20px);
     }
-    
-    
-
 }
 
 @media (max-width: 768px) {
@@ -516,10 +639,10 @@ img, video{
         height: 450px;
     }
     .slajdshow{
-        height: 470px;
+        height: 480px;
     }
     .slajd{
-        height: 470px;
+        height: 480px;
     }
     .odjeljak{
         margin-top: 60px;
