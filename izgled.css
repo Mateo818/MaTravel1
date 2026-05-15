@@ -596,6 +596,7 @@ h1{
     .kartica{
         width: calc(50% - 20px);
     }
+
 }
 
 @media (max-width: 768px) {
@@ -686,6 +687,17 @@ h1{
         width: 90%;
 
     }
-
-    
+    .destinacijeskrol{
+        flex-direction: column;
+        margin-top: 15px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .destinacijaslika{
+        display: none;
+    }
+    .okvir{
+        padding: 15px;
+        height: auto;
+    }
 }
